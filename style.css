@@ -140,47 +140,49 @@ ul { list-style: none; }
 
 /* --- Responsividade --- */
 @media (max-width: 768px) {
-    .nav__menu { display: none; } /* Simplificado para o exemplo */
+    /* REMOVA o display:none do nav__menu daqui */
     .hero { text-align: center; }
     .btn--outline { margin: 1rem 0 0 0; display: block; }
-    .nav__logo {
-        max-width: 150px;
-    }
+    .nav__logo { max-width: 150px; }
+
     .nav__toggle {
-    display: flex; /* Aparece só no mobile */
-  }
-  .nav__menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    background: #141414;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 2rem 2rem;
-    gap: 1.75rem;
-    transition: right .4s ease;
-    border-left: 1px solid #2a2520;
-    z-index: 1000;
-  }
+        display: flex;
+    }
 
-  .nav__menu.open {
-    right: 0; /* Desliza para dentro */
-  }
-  nav__overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.6);
-    z-index: 999;
-    backdrop-filter: blur(2px);
-  }
+    .nav__menu {
+        display: flex; /* ← NUNCA display:none */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: #141414;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem;
+        gap: 1.75rem;
+        transition: right .4s ease;
+        border-left: 1px solid #2a2520;
+        z-index: 1000;
+    }
 
-  .nav__overlay.active {
-    display: block;
-  }
+    .nav__menu.open {
+        right: 0;
+    }
+
+    .nav__overlay {  /* ← ponto adicionado */
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.6);
+        z-index: 999;
+        backdrop-filter: blur(2px);
+    }
+
+    .nav__overlay.active {
+        display: block;
+    }
 }
 
 /* --- WhatsApp Flutuante --- */
@@ -252,54 +254,7 @@ ul { list-style: none; }
   transform: translateX(0);
 }
 
-/* Mobile: tooltip desativada para não vazar a tela */
-@media (max-width: 768px) {
 
-    .nav__toggle {
-    display: flex;
-  }
-
-  .nav__menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    background: #141414;
-    flex-direction: column;
-    padding: 5rem 2rem;
-    gap: 1.5rem;
-    transition: right .4s ease;
-    z-index: 1000;
-  }
-
-  .nav__menu.open {
-    right: 0;
-  }
-
-  .nav__overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.6);
-    z-index: 999;
-  }
-
-  .nav__overlay.active {
-    display: block;
-  }
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    width: 54px;
-    height: 54px;
-  }
-
-  .whatsapp-float__tooltip {
-    display: none;
-  }
-}
 /* Layout em Grid para o Hero */
 .hero__grid {
     display: grid;
