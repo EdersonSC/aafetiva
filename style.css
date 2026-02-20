@@ -1,0 +1,335 @@
+/* ===========================
+   AAFETIVA — style.css
+   Dark Mode Luxo + Dourado
+   =========================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background: #0d0d0d; 
+    color: #e8e0d5; 
+    line-height: 1.7; 
+    overflow-x: hidden; 
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: color .3s; }
+ul { list-style: none; }
+
+/* --- Variáveis de Design --- */
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dark: #a07830;
+  --bg: #0d0d0d;
+  --bg-2: #141414;
+  --bg-3: #1a1a1a;
+  --text: #e8e0d5;
+  --text-muted: #9a9080;
+  --border: #2a2520;
+  --radius: 12px;
+  --transition: .3s ease;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* --- Tipografia SEO --- */
+.section__eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; text-align: center; display: block; }
+.section__title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 4vw, 2.75rem); color: #fff; text-align: center; margin-bottom: 3rem; }
+
+/* --- Header & Nav --- */
+.header--hidden {
+  transform: translateY(-100%);
+}
+.header { position: fixed; transform: translateY(0); transition: transform .4s ease, background .3s ease, box-shadow .3s ease; top: 0; width: 100%; z-index: 1000; padding: 1rem 0; transition: var(--transition); }
+.header.scrolled { background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; }
+.logo-accent { color: var(--gold); }
+.nav__menu { display: flex; gap: 2rem; align-items: center; }
+.nav__link:hover { color: var(--gold); }
+.nav__logo {
+    display: flex;
+    align-items: center;
+    max-width: 200px; /* Ajuste conforme o tamanho real do seu logo */
+}
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .4rem;
+  z-index: 1001;
+}
+.nav__toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all .35s ease;
+}
+/* Animação do X ao abrir */
+.nav__toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Filtro opcional caso queira dar um brilho dourado extra via CSS */
+    
+}
+
+/* --- Hero Section --- */
+.hero { min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%); position: relative; padding-top: 80px; }
+.hero__title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
+.hero__title--accent { color: var(--gold); }
+.hero__subtitle { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin-bottom: 2.5rem; }
+
+/* --- Botões --- */
+.btn { display: inline-block; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; transition: var(--transition); cursor: pointer; border: none; }
+.btn--primary { background: var(--gold); color: #0d0d0d; }
+.btn--primary:hover { background: var(--gold-light); transform: translateY(-3px); }
+.btn--outline { border: 1px solid var(--gold); color: var(--gold); background: transparent; margin-left: 1rem; }
+
+/* --- Catálogo Grid --- */
+.catalog__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; padding: 4rem 0; }
+.product-card { background: var(--bg-3); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); transition: var(--transition); }
+.product-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+.product-card__img { height: 250px; background: #222; position: relative; }
+.product-card__img::after { content: 'Foto do Produto'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #444; }
+.product-card__body { padding: 1.5rem; }
+.product-card__title { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: .5rem; color: #fff; }
+.product-card__price { color: var(--gold); font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 1rem; }
+
+/* --- WhatsApp Flutuante --- */
+.whatsapp-float { 
+    position: fixed; bottom: 30px; right: 30px; 
+    background: #25d366; color: #fff; 
+    width: 60px; height: 60px; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 100;
+    transition: var(--transition);
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+
+/* --- Formulário --- */
+.contact__form { background: var(--bg-3); padding: 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); max-width: 600px; margin: 0 auto; }
+.form__group { margin-bottom: 1.5rem; }
+.form__input { 
+    width: 100%; padding: 1rem; background: #0d0d0d; 
+    border: 1px solid var(--border); color: #fff; border-radius: 8px; 
+}
+.form__input:focus { border-color: var(--gold); outline: none; }
+
+/* --- Footer --- */
+.footer { padding: 4rem 0 2rem; background: #050505; border-top: 1px solid var(--border); text-align: center; }
+.footer__bottom { margin-top: 3rem; color: var(--text-muted); font-size: .8rem; }
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .nav__menu { display: none; } /* Simplificado para o exemplo */
+    .hero { text-align: center; }
+    .btn--outline { margin: 1rem 0 0 0; display: block; }
+    .nav__logo {
+        max-width: 150px;
+    }
+    .nav__toggle {
+    display: flex; /* Aparece só no mobile */
+  }
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background: #141414;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1.75rem;
+    transition: right .4s ease;
+    border-left: 1px solid #2a2520;
+    z-index: 1000;
+  }
+
+  .nav__menu.open {
+    right: 0; /* Desliza para dentro */
+  }
+  nav__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+  }
+
+  .nav__overlay.active {
+    display: block;
+  }
+}
+
+/* --- WhatsApp Flutuante --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  z-index: 9999;
+  transition: transform .3s ease, box-shadow .3s ease;
+  text-decoration: none;
+
+  /* Garante que o SVG não vaze */
+  overflow: visible;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* SVG dentro do botão */
+.whatsapp-float svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Tooltip */
+.whatsapp-float__tooltip {
+  position: absolute;
+  right: 70px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: .45rem .9rem;
+  border-radius: 6px;
+  border: 1px solid #2a2520;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Seta da tooltip */
+.whatsapp-float__tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: none;
+  border-left-color: #2a2520;
+}
+
+/* Mostra tooltip no hover */
+.whatsapp-float:hover .whatsapp-float__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile: tooltip desativada para não vazar a tela */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-float__tooltip {
+    display: none;
+  }
+}
+/* Layout em Grid para o Hero */
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Texto maior que a imagem */
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero__content {
+    text-align: left;
+}
+
+.hero__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero__img-main {
+    width: 100%;
+    max-width: 500px; /* Ajuste conforme o tamanho da sua imagem */
+    height: auto;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)); /* Sombra suave para dar profundidade */
+    animation: float 6s ease-in-out infinite; /* Efeito flutuante opcional */
+}
+
+/* Efeito de flutuação suave */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Ajuste para os Stats (ficar em linha) */
+.hero__stats {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Responsividade: No Mobile a imagem fica embaixo do texto */
+@media (max-width: 992px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 4rem;
+    }
+    
+    .hero__content {
+        text-align: center;
+    }
+
+    .hero__stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero__image {
+        order: -1; /* Opcional: coloca a imagem acima do texto no mobile */
+        margin-bottom: 2rem;
+    }
+    
+    .hero__img-main {
+        max-width: 300px;
+    }
+}
