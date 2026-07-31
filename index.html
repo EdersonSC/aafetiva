@@ -137,26 +137,7 @@
       </div>
     </section>
 
-    <!-- CATÁLOGO -->
-    <section class="catalog section" id="catalogo" aria-labelledby="catalog-title">
-      <div class="container">
-        <div class="section__header">
-          <p href="wa.me/c/5511914258934" class="section__eyebrow">Catálogo Exclusivo</p>
-          <h2 id="catalog-title" class="section__title">Nossas Cestas de Luxo</h2>
-          <p class="section__subtitle">Cada cesta é montada com amor e atenção aos detalhes</p>
-        </div>
-
-        <!-- Filtros -->
-        <div class="catalog__filters" role="tablist" aria-label="Filtrar produtos por categoria">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-          <button class="filter-btn" data-filter="cafe" role="tab" aria-selected="false">Café da Manhã</button>
-          <button class="filter-btn" data-filter="flores" role="tab" aria-selected="false">Flores & Ursinhos</button>
-          <button class="filter-btn" data-filter="corporativo" role="tab" aria-selected="false">Corporativo</button>
-          <button class="filter-btn" data-filter="datas" role="tab" aria-selected="false">Datas Especiais</button>
-        </div>
-      </div>
-    </section>
-
+   
     <!-- CORPORATIVO -->
     <section class="corporate section" id="corporativo" aria-labelledby="corp-title">
       <div class="container">
@@ -176,17 +157,17 @@
           </div>
           <div class="corporate__visual" aria-hidden="true">
             <div class="corporate__card">
-              <div class="corporate__icon">🏆</div>
+              <div class="corporate__icon"></div>
               <h3>Qualidade Premium</h3>
               <p>Produtos selecionados com rigoroso controle de qualidade</p>
             </div>
             <div class="corporate__card">
-              <div class="corporate__icon">🎁</div>
+              <div class="corporate__icon"></div>
               <h3>100% Personalizado</h3>
               <p>Cada detalhe pensado para a sua marca e ocasião</p>
             </div>
             <div class="corporate__card">
-              <div class="corporate__icon">🚀</div>
+              <div class="corporate__icon"></div>
               <h3>Entrega Garantida</h3>
               <p>Pontualidade e cuidado em cada entrega realizada</p>
             </div>
@@ -194,69 +175,7 @@
         </div>
       </div>
     </section>
-
-    <!-- DEPOIMENTOS -->
-    <section class="testimonials section" id="depoimentos" aria-labelledby="test-title">
-      <div class="container">
-        <div class="section__header">
-          <p class="section__eyebrow">Prova Social</p>
-          <h2 id="test-title" class="section__title">O que nossos clientes dizem</h2>
-        </div>
-        <div class="testimonials__grid">
-          <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-            <div class="testimonial-card__stars" aria-label="5 estrelas" role="img">★★★★★</div>
-            <blockquote class="testimonial-card__text" itemprop="reviewBody">
-              "A cesta chegou lindamente embalada e os produtos eram de altíssima qualidade. Minha esposa amou cada detalhe. Com certeza vou encomendar novamente!"
-            </blockquote>
-            <footer class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">MR</div>
-              <div>
-                <strong itemprop="author">Marcos Ribeiro</strong>
-                <span>Cliente desde 2023</span>
-              </div>
-            </footer>
-          </article>
-          <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-            <div class="testimonial-card__stars" aria-label="5 estrelas" role="img">★★★★★</div>
-            <blockquote class="testimonial-card__text" itemprop="reviewBody">
-              "Encomendamos 50 cestas para o fim de ano da empresa e o resultado foi incrível. Todos os colaboradores adoraram e o atendimento foi impecável!"
-            </blockquote>
-            <footer class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">AC</div>
-              <div>
-                <strong itemprop="author">Ana Carolina</strong>
-                <span>Diretora de RH — TechCorp</span>
-              </div>
-            </footer>
-          </article>
-          <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-            <div class="testimonial-card__stars" aria-label="5 estrelas" role="img">★★★★★</div>
-            <blockquote class="testimonial-card__text" itemprop="reviewBody">
-              "Presentei minha mãe no aniversário dela com a cesta café da manhã e ela ficou emocionada. A apresentação é digna de uma loja de luxo. Recomendo muito!"
-            </blockquote>
-            <footer class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">JS</div>
-              <div>
-                <strong itemprop="author">Juliana Santos</strong>
-                <span>Cliente desde 2024</span>
-              </div>
-            </footer>
-          </article>
-        </div>
-
-        <!-- Logos parceiros -->
-        <div class="partners" aria-label="Empresas parceiras">
-          <p class="partners__title">Empresas que confiam na Aafetiva</p>
-          <div class="partners__logos">
-            <div class="partner-logo" aria-label="Empresa parceira 1">Empresa A</div>
-            <div class="partner-logo" aria-label="Empresa parceira 2">Empresa B</div>
-            <div class="partner-logo" aria-label="Empresa parceira 3">Empresa C</div>
-            <div class="partner-logo" aria-label="Empresa parceira 4">Empresa D</div>
-            <div class="partner-logo" aria-label="Empresa parceira 5">Empresa E</div>
-          </div>
-        </div>
-      </div>
-    </section>
+ 
 
     <!-- CONTATO -->
     <section class="contact section" id="contato" aria-labelledby="contact-title">
@@ -291,47 +210,7 @@
             </div>
           </div>
 
-          <!-- Formulário -->
-          <form class="contact__form" id="contactForm" action="https://formspree.io/f/SEU_ID_AQUI" method="POST" novalidate aria-label="Formulário de contato">
-            <div class="form__group">
-              <label for="name" class="form__label">Nome completo *</label>
-              <input type="text" id="name" name="name" class="form__input" placeholder="Seu nome" required autocomplete="name" aria-required="true"/>
-              <span class="form__error" id="nameError" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form__group">
-              <label for="email" class="form__label">E-mail *</label>
-              <input type="email" id="email" name="email" class="form__input" placeholder="seu@email.com" required autocomplete="email" aria-required="true"/>
-              <span class="form__error" id="emailError" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form__group">
-              <label for="phone" class="form__label">WhatsApp</label>
-              <input type="tel" id="phone" name="phone" class="form__input" placeholder="(11) 99999-9999" autocomplete="tel"/>
-            </div>
-            <div class="form__group">
-              <label for="occasion" class="form__label">Ocasião</label>
-              <select id="occasion" name="occasion" class="form__input form__select" aria-label="Selecione a ocasião">
-                <option value="">Selecione a ocasião</option>
-                <option value="aniversario">Aniversário</option>
-                <option value="namorados">Dia dos Namorados</option>
-                <option value="maes">Dia das Mães</option>
-                <option value="natal">Natal / Fim de Ano</option>
-                <option value="corporativo">Presente Corporativo</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-            <div class="form__group">
-              <label for="message" class="form__label">Mensagem *</label>
-              <textarea id="message" name="message" class="form__input form__textarea" placeholder="Conte-nos sobre o presente que deseja..." required rows="4" aria-required="true"></textarea>
-              <span class="form__error" id="messageError" role="alert" aria-live="polite"></span>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full" aria-label="Enviar mensagem de contato">
-              <span id="submitText">Enviar Mensagem</span>
-            </button>
-            <p class="form__success" id="formSuccess" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
+         
 
   </main>
 
@@ -374,8 +253,7 @@
         <div class="footer__contact" aria-label="Informações de contato">
           <h3>Contato</h3>
           <address>
-            <p>📱 (11) 99999-9999</p>
-            <p>✉️ contato@aafetiva.com.br</p>
+            <p>📱 (11) 91425-8934</p>
             <p>🕐 Seg–Sáb: 8h às 20h</p>
           </address>
         </div>
